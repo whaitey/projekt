@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require("cors");
 const inventoryRoutes = require('./routes/inventoryRoutes'); // Új import
+const szamlakRouter = require('./routes/szamlak');
 
 // Express alkalmazás létrehozása
 const app = express();
@@ -29,6 +30,7 @@ app.use(express.json());
 
 // Route-ok használata az Express alkalmazásban
 app.use('/api/items', inventoryRoutes); // Új route használat
+app.use('/api/szamlak', szamlakRouter);
 
 // Express szerver indítása
 app.listen(port, () => {

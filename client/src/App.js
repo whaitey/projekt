@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ItemList from "./components/ItemList";
 import AddItem from "./components/AddItem";
+import Szamla from './components/Szamla';
+import UjSzamla from './components/UjSzamla';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -51,6 +53,8 @@ function App() {
       <h1>Item List</h1>
       <AddItem onAddNewItem={handleAddNewItem} />
       <ItemList items={items} setItems={setItems} onSaveEdit={handleItemEdit} />
+      <UjSzamla />
+      <Szamla />
     </div>
   );
 }
